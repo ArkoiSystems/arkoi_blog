@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 import siteMetadata from '@/data/siteMetadata'
 
-const ScrollTopAndComment = () => {
+export default function ScrollTopAndComment() {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
@@ -58,5 +58,3 @@ const ScrollTopAndComment = () => {
     </div>
   )
 }
-
-export default ScrollTopAndComment

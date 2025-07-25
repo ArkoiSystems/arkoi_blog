@@ -3,7 +3,7 @@ import { KBarButton } from 'pliny/search/KBarButton'
 
 import siteMetadata from '@/data/siteMetadata'
 
-const SearchButton = () => {
+export default function SearchButton() {
   if (
     siteMetadata.search &&
     (siteMetadata.search.provider === 'algolia' || siteMetadata.search.provider === 'kbar')
@@ -31,5 +31,3 @@ const SearchButton = () => {
     )
   }
 }
-
-export default SearchButton

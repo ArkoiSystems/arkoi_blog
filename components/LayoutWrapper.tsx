@@ -13,7 +13,7 @@ const inter = Inter({
   subsets: ['latin'],
 })
 
-const LayoutWrapper = ({ children }: Props) => {
+export default function LayoutWrapper({ children }: Props) {
   return (
     <SectionContainer>
       <div className={`${inter.className} flex h-screen flex-col justify-between font-sans`}>
@@ -24,5 +24,3 @@ const LayoutWrapper = ({ children }: Props) => {
     </SectionContainer>
   )
 }
-
-export default LayoutWrapper

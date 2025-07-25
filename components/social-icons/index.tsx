@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin } from './icons'
+import { Mail, Github, Linkedin } from './Icons'
 
 const components = {
   mail: Mail,
@@ -12,7 +12,7 @@ type SocialIconProps = {
   size?: number
 }
 
-const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
+export default function SocialIcon({ kind, href, size = 8 }: SocialIconProps) {
   if (
     !href ||
     (kind === 'mail' && !/^mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(href))
@@ -35,5 +35,3 @@ const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
     </a>
   )
 }
-
-export default SocialIcon

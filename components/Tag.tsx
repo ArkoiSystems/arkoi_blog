@@ -5,7 +5,7 @@ interface Props {
   text: string
 }
 
-const Tag = ({ text }: Props) => {
+export default function Tag({ text }: Props) {
   return (
     <Link
       href={`/tags/${slug(text)}`}
@@ -15,5 +15,3 @@ const Tag = ({ text }: Props) => {
     </Link>
   )
 }
-
-export default Tag
