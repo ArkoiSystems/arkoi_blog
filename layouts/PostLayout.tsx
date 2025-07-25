@@ -30,7 +30,7 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags } = content
+  const { filePath, path, date, title, tags } = content
   const basePath = path.split('/')[0]
 
   return (

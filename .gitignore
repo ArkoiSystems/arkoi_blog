@@ -307,9 +307,4 @@ fabric.properties
 public/sitemap.xml
 /public/feed.xml
 
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
 .contentlayer

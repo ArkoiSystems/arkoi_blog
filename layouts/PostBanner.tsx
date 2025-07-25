@@ -8,7 +8,6 @@ import SectionContainer from '@/components/SectionContainer'
 import PageTitle from '@/components/PageTitle'
 import Image from '@/components/Image'
 import Link from '@/components/Link'
-import siteMetadata from '@/data/siteMetadata'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -18,7 +17,7 @@ interface LayoutProps {
 }
 
 export default function PostMinimal({ content, next, prev, children }: LayoutProps) {
-  const { slug, title, images } = content
+  const { title, images } = content
   const displayImage =
     images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
 
