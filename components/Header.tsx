@@ -1,7 +1,6 @@
 import headerNavLinks from '@/data/headerNavLinks'
 import siteMetadata from '@/data/siteMetadata'
 import Logo from '@/data/logo.svg'
-import SearchButton from '@/components/SearchButton'
 import ThemeSwitch from '@/components/ThemeSwitch'
 import MobileNav from '@/components/MobileNav'
 import Link from '@/components/Link'
@@ -38,7 +37,6 @@ export default function Header() {
               </Link>
             ))}
         </div>
-        <SearchButton />
         <ThemeSwitch />
         <MobileNav />
       </div>
