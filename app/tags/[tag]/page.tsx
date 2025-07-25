@@ -10,9 +10,11 @@ import tagData from 'app/tag-data.json'
 
 const POSTS_PER_PAGE = 5
 
-export async function generateMetadata(props: {
+export interface MetadataProps {
   params: Promise<{ tag: string }>
-}): Promise<Metadata> {
+}
+
+export async function generateMetadata(props: MetadataProps): Promise<Metadata> {
   const params = await props.params
   const tag = decodeURI(params.tag)
   return genPageMetadata({

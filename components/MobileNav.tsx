@@ -14,9 +14,11 @@ export default function MobileNav() {
   const onToggleNav = () => {
     setNavShow((status) => {
       if (status) {
+        // @ts-ignore
         enableBodyScroll(navRef.current)
       } else {
         // Prevent scrolling
+        // @ts-ignore
         disableBodyScroll(navRef.current)
       }
       return !status

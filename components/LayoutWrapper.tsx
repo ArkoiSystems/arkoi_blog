@@ -5,15 +5,15 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import Header from './Header'
 
-interface Props {
-  children: ReactNode
-}
-
 const inter = Inter({
   subsets: ['latin'],
 })
 
-export default function LayoutWrapper({ children }: Props) {
+export interface LayoutWrapperProps {
+  children: ReactNode
+}
+
+export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   return (
     <SectionContainer>
       <div className={`${inter.className} flex h-screen flex-col justify-between font-sans`}>

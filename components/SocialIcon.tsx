@@ -1,13 +1,13 @@
 import { Mail, Github, Linkedin } from './Icons'
 
-const components = {
+export const SocialIcons = {
   mail: Mail,
   github: Github,
   linkedin: Linkedin,
 }
 
-type SocialIconProps = {
-  kind: keyof typeof components
+export interface SocialIconProps {
+  kind: keyof typeof SocialIcons
   href: string | undefined
   size?: number
 }
@@ -19,7 +19,7 @@ export default function SocialIcon({ kind, href, size = 8 }: SocialIconProps) {
   )
     return null
 
-  const SocialSvg = components[kind]
+  const SocialSvg = SocialIcons[kind]
 
   return (
     <a

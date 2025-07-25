@@ -1,7 +1,7 @@
 import type { Authors } from 'contentlayer/generated'
 import { ReactNode } from 'react'
 
-import SocialIcon from '@/components/social-icons'
+import SocialIcon from '@/components/SocialIcon'
 import Image from '@/components/Image'
 
 interface Props {

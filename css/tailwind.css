@@ -7,7 +7,8 @@
 /* Core theme configuration */
 @theme {
   /* Font families */
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  --font-sans:
+    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   /* Colors */
@@ -72,9 +73,8 @@
 
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid;
     border-radius: var(--radius-sm);
-    outline-color: var(--color-primary-500);
+    outline: var(--color-primary-500) solid 2px;
   }
 }
 
@@ -101,6 +101,7 @@
     }
   }
 
+  /*noinspection CssUnusedSymbol*/
   .prose-invert {
     & a {
       color: var(--color-primary-500);
@@ -117,22 +118,27 @@
   }
 }
 
+/*noinspection CssUnusedSymbol*/
 .task-list-item::before {
   @apply hidden;
 }
 
+/*noinspection CssUnusedSymbol*/
 .task-list-item {
   @apply list-none;
 }
 
+/*noinspection CssUnusedSymbol*/
 .footnotes {
   @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
 }
 
+/*noinspection CssUnusedSymbol*/
 .data-footnote-backref {
   @apply no-underline;
 }
 
+/*noinspection CssUnusedSymbol*/
 .csl-entry {
   @apply my-5;
 }
@@ -154,6 +160,7 @@ input:-webkit-autofill:focus {
     color 600000s 0s;
 }
 
+/*noinspection CssUnusedSymbol*/
 .katex-display {
   overflow: auto hidden;
 }
@@ -169,6 +176,7 @@ input:-webkit-autofill:focus {
   opacity: 1;
 }
 
+/*noinspection CssUnusedSymbol*/
 .linkicon {
   display: inline-block;
   vertical-align: middle;

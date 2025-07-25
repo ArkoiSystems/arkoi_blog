@@ -8,6 +8,7 @@
  */
 
 /* Code title styles */
+/*noinspection CssUnusedSymbol*/
 .remark-code-title {
   @apply rounded-xs bg-gray-700 px-5 py-3 font-mono text-sm font-bold text-gray-200 dark:bg-gray-800;
 }
@@ -17,10 +18,12 @@
 }
 
 /* Code block styles */
+/*noinspection CssUnusedSymbol*/
 .code-highlight {
   @apply float-left min-w-full;
 }
 
+/*noinspection CssUnusedSymbol*/
 .code-line {
   @apply -mx-4 block border-l-4 border-transparent pr-4 pl-4;
 }
@@ -29,14 +32,17 @@
   @apply bg-green-500/20;
 }
 
+/*noinspection CssUnusedSymbol*/
 .code-line.deleted {
   @apply bg-red-500/20;
 }
 
+/*noinspection CssUnusedSymbol*/
 .highlight-line {
   @apply border-primary-500 -mx-4 border-l-4 bg-gray-700/50;
 }
 
+/*noinspection CssUnusedSymbol*/
 .line-number::before {
   @apply mr-4 -ml-2 inline-block w-4 text-right text-gray-400;
   content: attr(line);
@@ -50,6 +56,7 @@
  * Ported by Sara vieria [@SaraVieira]
  * Added by Souvik Mandal [@SimpleIndian]
  */
+/*noinspection CssUnusedSymbol*/
 .token.comment,
 .token.prolog,
 .token.cdata {
@@ -57,38 +64,46 @@
   font-style: italic;
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.punctuation {
   color: rgb(199, 146, 234);
 }
 
+/*noinspection CssUnusedSymbol*/
 .namespace {
   color: rgb(178, 204, 214);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.deleted {
   color: rgba(239, 83, 80, 0.56);
   font-style: italic;
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.symbol,
 .token.property {
   color: rgb(128, 203, 196);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.tag,
 .token.operator,
 .token.keyword {
   color: rgb(127, 219, 202);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.boolean {
   color: rgb(255, 88, 116);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.number {
   color: rgb(247, 140, 108);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.constant,
 .token.function,
 .token.builtin,
@@ -96,18 +111,21 @@
   color: rgb(130, 170, 255);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.selector,
 .token.doctype {
   color: rgb(199, 146, 234);
   font-style: italic;
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.attr-name,
 .token.inserted {
   color: rgb(173, 219, 103);
   font-style: italic;
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.string,
 .token.url,
 .token.entity,
@@ -116,27 +134,32 @@
   color: rgb(173, 219, 103);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.class-name,
 .token.atrule,
 .token.attr-value {
   color: rgb(255, 203, 139);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.regex,
 .token.important,
 .token.variable {
   color: rgb(214, 222, 235);
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.important,
 .token.bold {
   font-weight: bold;
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.italic {
   font-style: italic;
 }
 
+/*noinspection CssUnusedSymbol*/
 .token.table {
   display: inline;
 }

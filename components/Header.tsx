@@ -1,10 +1,10 @@
 import headerNavLinks from '@/data/headerNavLinks'
 import siteMetadata from '@/data/siteMetadata'
 import Logo from '@/data/logo.svg'
-import SearchButton from './SearchButton'
-import ThemeSwitch from './ThemeSwitch'
-import MobileNav from './MobileNav'
-import Link from './Link'
+import SearchButton from '@/components/SearchButton'
+import ThemeSwitch from '@/components/ThemeSwitch'
+import MobileNav from '@/components/MobileNav'
+import Link from '@/components/Link'
 
 export default function Header() {
   let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'
@@ -19,13 +19,9 @@ export default function Header() {
           <div className="mr-3">
             <Logo />
           </div>
-          {typeof siteMetadata.headerTitle === 'string' ? (
-            <div className="hidden h-6 text-2xl font-semibold sm:block">
-              {siteMetadata.headerTitle}
-            </div>
-          ) : (
-            siteMetadata.headerTitle
-          )}
+          <div className="hidden h-6 text-2xl font-semibold sm:block">
+            {siteMetadata.headerTitle}
+          </div>
         </div>
       </Link>
       <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">

@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'ArkoiSystems',
+  title: 'ArkoiSystems Blog',
   author: 'Timo Behrend',
-  headerTitle: 'ArkoiSystems Blog',
+  headerTitle: 'ArkoiSystems',
   description: 'A technical blog about the ArkoiSystems project',
   language: 'en-us',
   theme: 'system',
@@ -100,4 +100,4 @@ const siteMetadata = {
   },
 }
 
-module.exports = siteMetadata
+export default siteMetadata

@@ -5,12 +5,15 @@ import { useState } from 'react'
 
 import siteMetadata from '@/data/siteMetadata'
 
-export default function Comments({ slug }: { slug: string }) {
+export interface CommentsProps {
+  slug: string
+}
+
+export default function Comments({ slug }: CommentsProps) {
   const [loadComments, setLoadComments] = useState(false)
 
-  if (!siteMetadata.comments?.provider) {
-    return null
-  }
+  if (!siteMetadata.comments?.provider) return null
+
   return (
     <>
       {loadComments ? (

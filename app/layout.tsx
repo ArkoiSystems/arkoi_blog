@@ -12,6 +12,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProviders } from './theme-providers'
 import siteMetadata from '@/data/siteMetadata'
+import React from 'react'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -59,7 +60,11 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export interface RootLayoutProps {
+  children: React.ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   const basePath = process.env.BASE_PATH || ''
 
   return (

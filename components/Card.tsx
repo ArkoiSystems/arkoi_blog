@@ -1,7 +1,14 @@
 import Image from './Image'
 import Link from './Link'
 
-export default function Card({ title, description, imgSrc, href }) {
+export interface CardProps {
+  title: string
+  description: string
+  imgSrc?: string
+  href?: string
+}
+
+export default function Card({ title, description, imgSrc, href }: CardProps) {
   return (
     <div className="md max-w-[544px] p-4 md:w-1/2">
       <div

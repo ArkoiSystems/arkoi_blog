@@ -1,11 +1,11 @@
 import { slug } from 'github-slugger'
 import Link from 'next/link'
 
-interface Props {
+export interface TagProps {
   text: string
 }
 
-export default function Tag({ text }: Props) {
+export default function Tag({ text }: TagProps) {
   return (
     <Link
       href={`/tags/${slug(text)}`}

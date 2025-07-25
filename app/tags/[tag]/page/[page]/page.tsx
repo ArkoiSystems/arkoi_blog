@@ -20,7 +20,11 @@ export const generateStaticParams = async () => {
   })
 }
 
-export default async function TagPage(props: { params: Promise<{ tag: string; page: string }> }) {
+export interface TagPageProps {
+  params: Promise<{ tag: string; page: string }>
+}
+
+export default async function TagPage(props: TagPageProps) {
   const params = await props.params
   const tag = decodeURI(params.tag)
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)

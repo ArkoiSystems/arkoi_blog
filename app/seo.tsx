@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 import siteMetadata from '@/data/siteMetadata'
 
-interface PageSEOProps {
+export interface PageSEOProps {
   title: string
   description?: string
   image?: string

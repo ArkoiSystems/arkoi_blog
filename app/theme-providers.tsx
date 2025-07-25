@@ -5,7 +5,11 @@ import React from 'react'
 
 import siteMetadata from '@/data/siteMetadata'
 
-export function ThemeProviders({ children }: { children: React.ReactNode }) {
+export interface ThemeProvidersProps {
+  children: React.ReactNode
+}
+
+export function ThemeProviders({ children }: ThemeProvidersProps) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme} enableSystem>
       {children}
