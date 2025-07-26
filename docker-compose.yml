@@ -2,8 +2,6 @@ services:
   app:
     container_name: blog
     build: .
-    ports:
-     - "3000:3000"
     restart: always
     networks:
       - reverse_proxy_default
