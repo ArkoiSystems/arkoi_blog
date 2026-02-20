@@ -48,4 +48,4 @@ jobs:
         run: bun run typecheck
 
       - name: Run Prettier Check
-        run: bun run prettier:check
+        run: bun run format:check
