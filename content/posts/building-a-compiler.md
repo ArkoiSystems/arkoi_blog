@@ -1,7 +1,7 @@
 ---
 title: "Building a Compiler from Scratch: The Journey Begins"
 description: "Starting the compiler project - understanding lexical analysis, tokenization, and the first steps of language implementation"
-date: "2024-02-10"
+date: "2025-02-10"
 author: "ArkoiSystems"
 tags: ["compiler", "language-design", "low-level", "systems"]
 published: true
