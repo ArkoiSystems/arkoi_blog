@@ -1,7 +1,7 @@
 ---
 title: "Writing an Operating System Kernel: Booting and Memory Management"
 description: "Building a minimal kernel from scratch - bootstrapping, memory management, and understanding how operating systems really work"
-date: "2024-02-15"
+date: "2025-02-15"
 author: "ArkoiSystems"
 tags: ["kernel", "os-dev", "systems", "memory"]
 published: true
