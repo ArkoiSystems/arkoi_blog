@@ -1,7 +1,7 @@
 ---
 title: "Pretty Diagnostics: Making Compiler Errors Actually Helpful"
 description: "Designing beautiful, developer-friendly error messages with source context, colors, and actionable suggestions"
-date: "2024-02-12"
+date: "2025-02-12"
 author: "ArkoiSystems"
 tags: ["diagnostics", "compiler", "developer-experience", "tooling"]
 published: true
