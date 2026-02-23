@@ -16,7 +16,7 @@ import ReactMarkdown from "react-markdown";
 
 export interface PostPageProps {
   params: Promise<{
-    slug: string;
+    slug: string[];
   }>;
 }
 
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   const posts = await getAllPosts();
 
   return posts.map((post) => ({
-    slug: post.slug,
+    slug: post.slug.split("/"),
   }));
 }
 
@@ -32,35 +32,53 @@ export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPost(slug);
+  const slugPath = slug.join("/");
+  const post = await getPost(slugPath);
 
   if (!post) {
     return {};
   }
 
   return {
-    title: post.title,
+    title: post.slug,
     description: post.description,
-    authors: post.author ? [{ name: post.author }] : undefined,
+    authors: [{ name: post.author }],
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: post.date.toISOString(),
-      authors: post.author ? [post.author] : undefined,
+      authors: [post.author],
       tags: post.tags,
+      images: [
+        {
+          url: `/api/og?slug=${encodeURIComponent(post.slug)}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      images: [
+        {
+          url: `/api/og?slug=${encodeURIComponent(post.slug)}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
   };
 }
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = await getPost(slug);
+  const slugPath = slug.join("/");
+  const post = await getPost(slugPath);
 
   if (!post) {
     notFound();

@@ -1,4 +1,4 @@
-import { readdir, readFile } from "fs/promises";
+import { readdir, readFile, stat } from "fs/promises";
 import path from "path";
 
 import matter from "gray-matter";
@@ -7,6 +7,26 @@ import { z } from "zod";
 const POSTS_DIRECTORY = path.join(process.cwd(), "content/posts");
 // As it's a heavy code blog, we can assume faster speed
 const WORDS_PER_MINUTE = 120;
+
+async function findMarkdownFiles(
+  directory: string,
+  baseDir: string = directory,
+): Promise<string[]> {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = await Promise.all(
+    entries.map(async (entry) => {
+      const fullPath = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        return findMarkdownFiles(fullPath, baseDir);
+      } else if (entry.isFile() && entry.name.endsWith(".md")) {
+        // Return relative path from base directory
+        return path.relative(baseDir, fullPath);
+      }
+      return [];
+    }),
+  );
+  return files.flat();
+}
 
 export interface Post {
   slug: string;
@@ -57,8 +77,7 @@ function calculateReadTime(content: string): number {
 
 export async function getAllPosts(): Promise<Post[]> {
   try {
-    const allFiles = await readdir(POSTS_DIRECTORY);
-    const markdownFiles = allFiles.filter((file) => file.endsWith(".md"));
+    const markdownFiles = await findMarkdownFiles(POSTS_DIRECTORY);
 
     const posts: (Post | null)[] = await Promise.all(
       markdownFiles.map(async (file) => {
@@ -75,6 +94,8 @@ export async function getAllPosts(): Promise<Post[]> {
           return null;
         }
 
+        // Create slug from file path (preserves subdirectory structure)
+        // e.g., "compiler/general-01.md" -> "compiler/general-01"
         const slug = file.replace(/\.md$/, "");
         return createPost(slug, parsed, content);
       }),
@@ -91,6 +112,7 @@ export async function getAllPosts(): Promise<Post[]> {
 
 export async function getPost(slug: string): Promise<Post | null> {
   try {
+    // Handle both single slugs and nested paths (e.g., "my-post" or "compiler/general-01")
     const filePath = path.join(POSTS_DIRECTORY, `${slug}.md`);
     const fileContent = await readFile(filePath, "utf-8");
 
